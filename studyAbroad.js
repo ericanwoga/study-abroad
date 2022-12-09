@@ -1,10 +1,13 @@
 const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, './.env') })  
+const favicon = require('serve-favicon'); //favicon
 const express = require("express"); //express module which is our server
+require("dotenv").config({ path: path.resolve(__dirname, './.env') })  
 const app = express();  // app creates an application  to set up our server
 const portNumber = 3000;
 const prompt = "Stop to shutdown the server: ";
+app.use(favicon(path.join(__dirname, 'favicon', 'favicon.ico')));
 app.listen(portNumber); //app will run on this server  
+
 
 const bodyParser = require("body-parser"); // handles post paramer
 
@@ -27,5 +30,5 @@ app.use(bodyParser.urlencoded({extended:false})); //allows parsing
 
 //Our home page
 app.get("/", (req, res) => {
-    response.render("index");
+    res.render("index");
 });
