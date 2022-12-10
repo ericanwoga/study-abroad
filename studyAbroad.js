@@ -9,7 +9,10 @@ app.use('/apply', applicationRouter); //mounts apply router to /apply
 
 const portNumber = 3000;
 const prompt = "Stop to shutdown the server: ";
-app.use(favicon(path.join(__dirname, 'favicon', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/favicon', 'favicon.ico')));
+
+app.use(express.static(__dirname + '/public'));//for static files
+
 app.listen(portNumber); //app will run on this server  
 app.set("views", path.resolve(__dirname, "views")); //local directory where templates will reside
 app.set("view engine", "ejs"); //allows us to use ejs

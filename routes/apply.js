@@ -36,7 +36,9 @@ router.get("/", (req, res) => {
             if(found){
                 //same ID was found, DO NOT ADD TO DATABASE
                 let errorMsg = {
-                    error: `ERROR! Student with ID ${studentInfo.studentID} already submitted an application.`
+                    error: `ERROR!
+                    Student with ID "${studentInfo.studentID}" has already submitted an application! 
+                    Please try again.`
                 }
 
                 res.render("apply", errorMsg);

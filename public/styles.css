@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200;400;500;700;900&display=swap');
+
+:root{
+    --color-light-blue: rgb(205, 243, 254);
+    --color-blue: rgb(113, 227, 255);
+    --color-med-blue: rgb(78,210,244);
+    --color-ocean: rgb(91, 106, 150);
+    --color-ocean2: rgb(84, 108, 178);
+    --color-navy: rgb(78, 90, 125);
+    --color-med-green: rgb(119, 241, 78);
+    --color-grey: rgb(143, 147, 163);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0,0,0);
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    font-family: 'Chivo', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0% 0% 5%;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 10vw;
+    margin: 1%;
+    color: var(--color-black);
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 3vw; 
+    width: 75%;
+    margin: 1%;
+    color: var(--color-grey);
+}
+
+#sign-up {
+    font-family: 'Chivo', sans-serif;
+    width: 18vw;
+    padding: 1%;
+    margin-top: 4%;
+    border-radius: 5px;
+    border: 0px;
+    background-image: linear-gradient(to right, var(--color-ocean), var(--color-med-blue));
+    box-shadow: 0 0 15px 0 rgba(70, 204, 219, 0.75);
+    color: var(--color-white);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 3vw;
+}
+
+#sign-up:hover {
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+    background-image: linear-gradient(to right,
+    rgb(107, 135, 169), rgb(97, 199, 225),rgb(114, 221, 248));
+}
+
+.application-container{
+    height: 100%;
+    width: 100%;
+}
+
+.application-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container{
+    padding:5%;
+}
+
+#form-title{
+    font-size: 8vw;
+}
+
+.reset-and-submit{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    padding: 1% 0% 1% 0%;
+}
+
+#reset{
+    font-family: 'Chivo', sans-serif;
+    border-radius: 5px;
+    border: 0px;
+    background-color: var(--color-blue);
+    color: var(--color-black);
+    cursor: pointer;
+    font-weight: 400;
+    padding: 1%;
+    font-size: 2vw;
+}
+
+#submit{
+    font-family: 'Chivo', sans-serif;
+    border-radius: 5px;
+    border: 0px;
+    background-color: var(--color-blue);
+    color: var(--color-black);
+    cursor: pointer;
+    font-weight: 400;
+    padding: 1%;
+    font-size: 2vw;
+}
+
+
+#submit:hover {
+    transition: all .1s ease-in-out;
+    background-color: rgb(170, 243, 254);
+}
+
+#reset:hover {
+    transition: all .1s ease-in-out;
+    background-color: rgb(170, 243, 254);
+}
+
+fieldset{
+    border-color: var(--color-ocean);
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+#location.decorated option:hover{
+    background-color: blueviolet;
+}
+
+#error{
+    color:rgb(208, 17, 17);
+}

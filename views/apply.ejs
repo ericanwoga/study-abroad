@@ -1,9 +1,9 @@
-<!-- DO NOT MODIFY THIS FILE -->
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>Study Abroad</title>
+        <link href="/styles.css" rel="stylesheet" type="text/css">
     </head>
     <script>
         function verify(){
@@ -19,59 +19,62 @@
         }
     </script>
     <body>
-        <h1>Study Abroad Form</h1>
-        <h2>Fill out all the information below.</h2>
-        <p><b><%- locals.error %></b></p>
-        <form class="form" action="./apply" method="POST">
-            <fieldset>
-                <legend><b>Name</b></legend>
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
+        <div class="application-container">
+            <div class="form-container">
+                <div class="application-title">
+                    <h1 id="form-title">Study Abroad Form</h1>
+                    <p>Fill out all the information below.</p>
+                </div>
                 
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
-            </fieldset>
-            
-            <br><br>
-            <fieldset>
-                <legend><b>Student ID</b></legend>
-                <p>
-                    Please enter your Student ID.
-                    <b>All IDs start with 3 uppercase letters followed by 3 digits.</b>
-                </p>
-                <label for="studentID">
-                <input type="text" id="studentID" name="studentID" placeholder="AAA###" required></label>
-            </fieldset>
-            <br><br>
-            <fieldset>
-                <legend><b>Location</b></legend>
-                <p>Where would you like to study abroad?</p>
-                <select name="location" id="location">
-                    <option value="Barcelona">Barcelona, Spain</option>
-                    <option value="Cape Town">Cape Town, South Africa</option>
-                    <option value="Florence">Florence, Italy</option>
-                    <option value="London">London, United Kindgom</option>
-                    <option value="Nice">Nice, France</option>
-                    <option value="Tokyo">Tokyo, Japan</option>
-                </select>
-            </fieldset>
-            <br><br>
-            <fieldset>
-                <legend><b>Semester</b></legend>
-                <p>Which semester would you like to study abroad?</p>
-                <input type="radio" value="spring" id="spring" name="semester">
-                <label for="spring">Spring</label>
-                
-                <input type="radio" value="summer" id="summer" name="semester">
-                <label for="summer">Summer</label>
-
-                <input type="radio" value="fall" id="fall" name="semester">
-                <label for="fall">Fall</label>
-            </fieldset>
-            <br><br>
-            <input type="reset" />
-            <button type="button" value="Submit Application" onclick="verify()">Submit</button>
-        </form>
-        </body>
+                <p id="error"><b><%- locals.error %></b></p>
+                <form class="form" action="./apply" method="POST">
+                    <fieldset>
+                        <legend><b>Name</b></legend>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <br><br>
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend><b>Student ID</b></legend>
+                        <p>
+                            Please enter your Student ID.
+                            <b>All IDs start with 3 uppercase letters followed by 3 digits.</b>
+                        </p>
+                        <label for="studentID">
+                        <input type="text" id="studentID" name="studentID" placeholder="AAA###" required></label>
+                    </fieldset>
+                    <fieldset>
+                        <legend><b>Location</b></legend>
+                        <p>Where would you like to study abroad?</p>
+                        <select name="location" id="location">
+                            <option value="Barcelona">Barcelona, Spain</option>
+                            <option value="Cape Town">Cape Town, South Africa</option>
+                            <option value="Florence">Florence, Italy</option>
+                            <option value="London">London, United Kindgom</option>
+                            <option value="Nice">Nice, France</option>
+                            <option value="Tokyo">Tokyo, Japan</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend><b>Semester</b></legend>
+                        <p>Which semester would you like to study abroad?</p>
+                        <input type="radio" value="spring" id="spring" name="semester">
+                        <label for="spring">Spring</label>
+                        
+                        <input type="radio" value="summer" id="summer" name="semester">
+                        <label for="summer">Summer</label>
+    
+                        <input type="radio" value="fall" id="fall" name="semester">
+                        <label for="fall">Fall</label>
+                    </fieldset>
+                    <div class="reset-and-submit">
+                        <input id="reset" type="reset" />
+                        <button id="submit" value="Submit Application" onclick="verify()">Submit</button>
+                    </div>
+                </form>
+            </div> 
+        </div>
     </body>
 </html>
