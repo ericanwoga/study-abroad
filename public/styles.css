@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200;400;500;700;900&display=swap');
 
 :root{
-    --color-light-blue: rgb(205, 243, 254);
-    --color-blue: rgb(113, 227, 255);
+    --color-light-blue: rgb(170, 243, 254);
+    --color-blue: rgb(151, 224, 243);
     --color-med-blue: rgb(78,210,244);
     --color-ocean: rgb(91, 106, 150);
     --color-ocean2: rgb(84, 108, 178);
@@ -59,7 +59,7 @@ h2 {
     border-radius: 5px;
     border: 0px;
     background-image: linear-gradient(to right, var(--color-ocean), var(--color-med-blue));
-    box-shadow: 0 0 15px 0 rgba(70, 204, 219, 0.75);
+    /*box-shadow: 0 0 10px 5px rgba(84, 223, 238, 0.5);*/
     color: var(--color-white);
     cursor: pointer;
     font-weight: 400;
@@ -71,9 +71,11 @@ h2 {
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-
     background-image: linear-gradient(to right,
-    rgb(107, 135, 169), rgb(97, 199, 225),rgb(114, 221, 248));
+    rgb(198, 205, 255), var(--color-blue));
+
+   /* background-image: linear-gradient(to right,
+    rgb(107, 135, 169), rgb(97, 199, 225),rgb(95, 181, 202));*/
 }
 
 .application-container{
@@ -105,7 +107,7 @@ h2 {
     font-family: 'Chivo', sans-serif;
     border-radius: 5px;
     border: 0px;
-    background-color: var(--color-blue);
+    background-image: linear-gradient(to right,var(--color-light-blue), var(--color-blue));
     color: var(--color-black);
     cursor: pointer;
     font-weight: 400;
@@ -117,7 +119,7 @@ h2 {
     font-family: 'Chivo', sans-serif;
     border-radius: 5px;
     border: 0px;
-    background-color: var(--color-blue);
+    background-image: linear-gradient(to right,var(--color-light-blue), var(--color-blue));
     color: var(--color-black);
     cursor: pointer;
     font-weight: 400;
@@ -128,12 +130,22 @@ h2 {
 
 #submit:hover {
     transition: all .1s ease-in-out;
-    background-color: rgb(170, 243, 254);
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right,
+    rgb(198, 205, 255), var(--color-blue));
 }
 
 #reset:hover {
     transition: all .1s ease-in-out;
-    background-color: rgb(170, 243, 254);
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right,
+    rgb(198, 205, 255), var(--color-blue));
 }
 
 fieldset{
