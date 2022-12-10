@@ -3,7 +3,11 @@ const favicon = require('serve-favicon'); //favicon
 const express = require("express"); //express module which is our server
 require("dotenv").config({ path: path.resolve(__dirname, './.env') })  
 const app = express();  // app creates an application  to set up our server
-const portNumber = 5500;
+
+const applicationRouter = require("./routes/apply"); //import apply router
+app.use('/apply', applicationRouter); //mounts apply router to /apply
+
+const portNumber = 3000;
 const prompt = "Stop to shutdown the server: ";
 app.use(favicon(path.join(__dirname, 'favicon', 'favicon.ico')));
 app.listen(portNumber); //app will run on this server  
@@ -32,7 +36,3 @@ app.get("/", (req, res) => {
 });
 
 
-//show application form
-app.get("/apply", (req, res) => { 
-    res.render("apply");
-});
