@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200;400;500;700;900&display=swap');
+
+:root{
+    --color-light-blue: rgb(170, 243, 254);
+    --color-blue: rgb(151, 224, 243);
+    --color-med-blue: rgb(78,210,244);
+    --color-ocean: rgb(91, 106, 150);
+    --color-ocean2: rgb(84, 108, 178);
+    --color-navy: rgb(78, 90, 125);
+    --color-med-green: rgb(119, 241, 78);
+    --color-grey: rgb(143, 147, 163);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0,0,0);
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    font-family: 'Chivo', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url("../../images/florence-img.jpg");
+    background-size: cover;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 10vw;
+    margin: 1%;
+    color: var(--color-black);
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 3vw; 
+    width: 75%;
+    margin: 1%;
+    color: var(--color-grey);
+}
+
+span {
+    color:rgb(228, 151, 78);
+}
+
+.welcome-container{
+    background-color: rgba(240, 248, 255, 0.8);
+    border-radius: 20px;
+    margin: 2%;
+}
+
+.welcome-title{
+    padding: 1% 0% 1% 0%;
+}

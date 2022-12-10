@@ -5,7 +5,10 @@ require("dotenv").config({ path: path.resolve(__dirname, './.env') })
 const app = express();  // app creates an application  to set up our server
 
 const applicationRouter = require("./routes/apply"); //import apply router
-app.use('/apply', applicationRouter); //mounts apply router to /apply
+app.use('/apply', applicationRouter); //mounts apply router to '/apply'
+const welcomeRouter = require("./routes/welcome"); //import welcome router
+app.use('/welcome', welcomeRouter); //mounts welcome router to '/welcome'
+
 
 const portNumber = 3000;
 const prompt = "Stop to shutdown the server: ";

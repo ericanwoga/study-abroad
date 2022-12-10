@@ -4,15 +4,25 @@
     <head>
         <meta charset="utf-8" />
         <title>Study Abroad</title>
-        <link href="../public/style.css" rel="stylesheet" type="text/css">
+        <link href="/styles/fl-styles.css" rel="stylesheet" type="text/css">
     </head>
     <script>
-       
+        
     </script>
     <body>
-        <h1>Welcome, <%- firstName%>!</h1>
-        <h2>Here is some information about <%- location %></h2>
-        
-        
+        <div class="welcome-container">
+            <div class="welcome-title">
+                <h1><%- welcome %>!</h1>
+                <h2>Learn more about <span><%- location %></span>.</h2>
+            </div>
+            <div>
+            </div>
+            <div>
+                <h2>Students who are going to this destination</h2>
+                <table>
+
+                </table>
+            </div>
+        </div>
     </body>
 </html>
