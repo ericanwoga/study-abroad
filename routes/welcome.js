@@ -32,6 +32,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
+                style: `<link href="/styles/ba-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "¡Bienvenidos",
                 location: "Barcelona, Spain",
                 trivia: "Api",
@@ -81,6 +82,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
+                style: `<link href="/styles/ct-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Welkom",
                 location: "Cape Town, South Africa",
                 trivia: "Api",
@@ -130,6 +132,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
+                style: `<link href="/styles/fl-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Benvenuto",
                 location: "Florence, Italy",
                 trivia: "Api",
@@ -179,6 +182,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
+                style: `<link href="/styles/ld-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Welcome",
                 location: "London, United Kingdom",
                 trivia: "Api",
@@ -228,6 +232,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
+                style: `<link href="/styles/ni-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Bienvenue",
                 location: "Nice, France",
                 trivia: "Api",
@@ -277,6 +282,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
+                style: `<link href="/styles/tk-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "ようこそ",
                 location: "Tokyo, Japan",
                 trivia: "Api",

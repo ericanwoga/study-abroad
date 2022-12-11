@@ -13,15 +13,9 @@
     --color-black: rgb(0,0,0);
 }
 
-html{
-    height: 100vh;
-    width: 100vw;
-}
 
 body{
     font-family: 'Chivo', sans-serif;
-    height: 100%;
-    width: 100%;
     margin: 0;
     background-image: url("../../images/florence-img.jpg");
     background-size: cover;
@@ -42,16 +36,48 @@ h2 {
     color: var(--color-grey);
 }
 
+h3 {
+    font-weight: 800;
+    font-size: 2vw; 
+    margin: 1%;
+    color: black;
+}
+
 span {
     color:rgb(228, 151, 78);
 }
 
 .welcome-container{
-    background-color: rgba(240, 248, 255, 0.8);
+    background-color: rgba(240, 246, 255, 0.9);
+    padding: 2%;
     border-radius: 20px;
     margin: 2%;
+    
 }
 
 .welcome-title{
     padding: 1% 0% 1% 0%;
+    text-shadow: 0 0 1px 10px white;
+}
+
+.studentTable{
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 60%;
+    font-size: 1.5vw; 
+}
+
+th {
+    background-color: rgb(228, 151, 78);
+    text-align: center;
+    padding: 1%;
+}
+
+table tr{
+    border-bottom: 5px solid black;
+}
+
+td {
+    padding: 1%;
 }
