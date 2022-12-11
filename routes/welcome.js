@@ -6,51 +6,307 @@ const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
 const databaseAndCollection = {db: "studyAbroad_DB", collection:"students"};
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const { request } = require("http");
+
 
 //show welcome page
 router.get("/Barcelona", (req, res) => { 
-    let obj={
-        welcome: "¡Bienvenidos",
-        location: "Barcelona, Spain"
+    let studentList; //students in the same city
+    let tableString = "";
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    
+        try {
+            await client.connect();
+            let city = "Barcelona";
+            studentList = await findStudentsForCity(client, databaseAndCollection, city);
+            //make a table of students in same city
+            studentList.forEach(student =>{ tableString +=
+                `<tr>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td>${student.location}</td>
+                    <td>${student.semester}</td>
+                </tr>`
+            });
+
+            let info={
+                greeting: "¡Bienvenidos",
+                location: "Barcelona, Spain",
+                trivia: "Api",
+                table: tableString
+            } 
+
+            //render the collected data on the screen
+            res.render("welcome", info);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
     }
-    res.render("welcome", obj);
+
+    async function findStudentsForCity(client, databaseAndCollection, city) {
+        let filter = {location: city};
+        const cursor = await client.db(databaseAndCollection.db)
+                            .collection(databaseAndCollection.collection)
+                            .find(filter);
+    
+        const result = await cursor.toArray();  //returns all students going to that city
+        return result;
+    }
+    
+    main().catch(console.error);
 
 }).get("/CapeTown", (req, res) => {
-    let obj={
-        welcome: "Welkom",
-        location: "Cape Town, South Africa"
-    } 
-    res.render("welcome", obj);
+    let studentList; //students in the same city
+    let tableString = "";
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    
+        try {
+            await client.connect();
+            let city = "Cape Town";
+            studentList = await findStudentsForCity(client, databaseAndCollection, city);
+            //make a table of students in same city
+            studentList.forEach(student =>{ tableString +=
+                `<tr>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td>${student.location}</td>
+                    <td>${student.semester}</td>
+                </tr>`
+            });
+
+            let info={
+                greeting: "Welkom",
+                location: "Cape Town, South Africa",
+                trivia: "Api",
+                table: tableString
+            } 
+
+            //render the collected data on the screen
+            res.render("welcome", info);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+
+    async function findStudentsForCity(client, databaseAndCollection, city) {
+        let filter = {location: city};
+        const cursor = await client.db(databaseAndCollection.db)
+                            .collection(databaseAndCollection.collection)
+                            .find(filter);
+    
+        const result = await cursor.toArray();  //returns all students going to that city
+        return result;
+    }
+    
+    main().catch(console.error);
 
 }).get("/Florence", (req, res) => { 
-    let obj={
-        welcome: "Benvenuto",
-        location: "Florence, Italy"
-    } 
-    res.render("welcome", obj);
+    let studentList; //students in the same city
+    let tableString = "";
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    
+        try {
+            await client.connect();
+            let city = "Florence";
+            studentList = await findStudentsForCity(client, databaseAndCollection, city);
+            //make a table of students in same city
+            studentList.forEach(student =>{ tableString +=
+                `<tr>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td>${student.location}</td>
+                    <td>${student.semester}</td>
+                </tr>`
+            });
+
+            let info={
+                greeting: "Benvenuto",
+                location: "Florence, Italy",
+                trivia: "Api",
+                table: tableString
+            } 
+
+            //render the collected data on the screen
+            res.render("welcome", info);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+
+    async function findStudentsForCity(client, databaseAndCollection, city) {
+        let filter = {location: city};
+        const cursor = await client.db(databaseAndCollection.db)
+                            .collection(databaseAndCollection.collection)
+                            .find(filter);
+    
+        const result = await cursor.toArray();  //returns all students going to that city
+        return result;
+    }
+    
+    main().catch(console.error);
 
 }).get("/London", (req, res) => { 
-    let obj={
-        welcome: "Welcome",
-        location: "London, United Kingdom"
-    } 
-    res.render("welcome", obj);
+    let studentList; //students in the same city
+    let tableString = "";
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    
+        try {
+            await client.connect();
+            let city = "London";
+            studentList = await findStudentsForCity(client, databaseAndCollection, city);
+            //make a table of students in same city
+            studentList.forEach(student =>{ tableString +=
+                `<tr>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td>${student.location}</td>
+                    <td>${student.semester}</td>
+                </tr>`
+            });
+
+            let info={
+                greeting: "Welcome",
+                location: "London, United Kingdom",
+                trivia: "Api",
+                table: tableString
+            } 
+
+            //render the collected data on the screen
+            res.render("welcome", info);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+
+    async function findStudentsForCity(client, databaseAndCollection, city) {
+        let filter = {location: city};
+        const cursor = await client.db(databaseAndCollection.db)
+                            .collection(databaseAndCollection.collection)
+                            .find(filter);
+    
+        const result = await cursor.toArray();  //returns all students going to that city
+        return result;
+    }
+    
+    main().catch(console.error);
 
 }).get("/Nice", (req, res) => {
-    let obj={
-        welcome: "Bienvenue",
-        location: "Nice, Frace"
-    }  
-    res.render("welcome", obj);
+   let studentList; //students in the same city
+   let tableString = "";
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    
+        try {
+            await client.connect();
+            let city = "Nice";
+            studentList = await findStudentsForCity(client, databaseAndCollection, city);
+            //make a table of students in same city
+            studentList.forEach(student =>{ tableString +=
+                `<tr>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td>${student.location}</td>
+                    <td>${student.semester}</td>
+                </tr>`
+            });
+
+            let info={
+                greeting: "Bienvenue",
+                location: "Nice, France",
+                trivia: "Api",
+                table: tableString
+            } 
+
+            //render the collected data on the screen
+            res.render("welcome", info);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+
+    async function findStudentsForCity(client, databaseAndCollection, city) {
+        let filter = {location: city};
+        const cursor = await client.db(databaseAndCollection.db)
+                            .collection(databaseAndCollection.collection)
+                            .find(filter);
+    
+        const result = await cursor.toArray();  //returns all students going to that city
+        return result;
+    }
+    
+    main().catch(console.error);
 
 }).get("/Tokyo", (req, res) => { 
-    let obj={
-        welcome: "ようこそ",
-        location: "Tokyo, Japan"
-    } 
-    res.render("welcome", obj);
+    let studentList; //students in the same city
+    let tableString = "";
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    
+        try {
+            await client.connect();
+            let city = "Tokyo";
+            studentList = await findStudentsForCity(client, databaseAndCollection, city);
+            //make a table of students in same city
+            studentList.forEach(student =>{ tableString +=
+                `<tr>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td>${student.location}</td>
+                    <td>${student.semester}</td>
+                </tr>`
+            });
+
+            let info={
+                greeting: "ようこそ",
+                location: "Tokyo, Japan",
+                trivia: "Api",
+                table: tableString
+            } 
+
+            //render the collected data on the screen
+            res.render("welcome", info);
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+
+    async function findStudentsForCity(client, databaseAndCollection, city) {
+        let filter = {location: city};
+        const cursor = await client.db(databaseAndCollection.db)
+                            .collection(databaseAndCollection.collection)
+                            .find(filter);
+    
+        const result = await cursor.toArray();  //returns all students going to that city
+        return result;
+    }
+    
+    main().catch(console.error);
 
 })
+
+
 
 
 module.exports = router;

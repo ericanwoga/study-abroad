@@ -12,7 +12,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 router.get("/", (req, res) => { 
     res.render("apply");
 }).post("/", (req, res) =>{
-    //get the student's form
+    //get the student's form info
     let studentInfo = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -48,8 +48,8 @@ router.get("/", (req, res) => {
                 .collection(databaseAndCollection.collection)
                 .insertOne(studentInfo);
 
-                //go to info page
-                res.render("welcome", studentInfo);
+                //go to the welcome page according to location
+                res.redirect(`/welcome/${studentInfo.location}`);
             }
             
         } catch (e) {

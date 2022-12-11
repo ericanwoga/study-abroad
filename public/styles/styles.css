@@ -7,6 +7,7 @@
     --color-ocean: rgb(91, 106, 150);
     --color-ocean2: rgb(84, 108, 178);
     --color-navy: rgb(78, 90, 125);
+    --color-lavender:  rgb(198, 205, 255);
     --color-med-green: rgb(119, 241, 78);
     --color-grey: rgb(143, 147, 163);
     --color-white: rgb(255, 255, 255);
@@ -24,6 +25,8 @@ body{
     width: 100%;
     margin: 0;
 }
+
+/*---------- HOME PAGE -----------*/
 
 .container{
     height: 100%;
@@ -51,11 +54,15 @@ h2 {
     color: var(--color-grey);
 }
 
+.home-buttons{
+    margin-top: 4%;
+}
+
 #sign-up {
     font-family: 'Chivo', sans-serif;
-    width: 18vw;
+    width: 15vw;
     padding: 1%;
-    margin-top: 4%;
+    margin-right: 5%;
     border-radius: 5px;
     border: 0px;
     background-image: linear-gradient(to right, var(--color-ocean), var(--color-med-blue));
@@ -63,10 +70,24 @@ h2 {
     color: var(--color-white);
     cursor: pointer;
     font-weight: 400;
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
-#sign-up:hover {
+#current {
+    font-family: 'Chivo', sans-serif;
+    width: 25vw;
+    padding: 1%;
+    margin-right: 5%;
+    border-radius: 5px;
+    border: 0px;
+    background-image: linear-gradient(to right, var(--color-ocean), var(--color-med-blue));
+    color: var(--color-white);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 2.5vw;
+}
+
+#sign-up:hover , #current:hover {
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -78,6 +99,7 @@ h2 {
     rgb(107, 135, 169), rgb(97, 199, 225),rgb(95, 181, 202));*/
 }
 
+/*----- STUDY ABROAD APPLICATION -------*/
 .application-container{
     height: 100%;
     width: 100%;
@@ -135,7 +157,7 @@ h2 {
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
     background-image: linear-gradient(to right,
-    rgb(198, 205, 255), var(--color-blue));
+    var(--color-lavender), var(--color-light-blue));
 }
 
 #reset:hover {
@@ -145,7 +167,7 @@ h2 {
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
     background-image: linear-gradient(to right,
-    rgb(198, 205, 255), var(--color-blue));
+    var(--color-lavender), var(--color-light-blue));
 }
 
 fieldset{
@@ -154,9 +176,7 @@ fieldset{
     margin-bottom: 2%;
 }
 
-#location.decorated option:hover{
-    background-color: blueviolet;
-}
+
 
 #error{
     color:rgb(208, 17, 17);

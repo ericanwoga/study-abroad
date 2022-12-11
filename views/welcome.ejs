@@ -12,15 +12,20 @@
     <body>
         <div class="welcome-container">
             <div class="welcome-title">
-                <h1><%- welcome %>!</h1>
+                <h1><%- greeting %>!</h1>
                 <h2>Learn more about <span><%- location %></span>.</h2>
             </div>
             <div>
+                <h3>Information</h3>
+                <%- trivia %>
             </div>
             <div>
-                <h2>Students who are going to this destination</h2>
-                <table>
-
+                <h3>Students who are also going to <%- location %></h3>
+                <table border="1">
+                    <tr>
+                        <th>Name</th><th>Destination</th><th>Semester</th>
+                    </tr>
+                    <%- table %>
                 </table>
             </div>
         </div>
