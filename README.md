@@ -1,4 +1,4 @@
-![banner](./images/flag-banner.png)
+![banner](./public/images/flag-banner.png)
 
 # **Study Abroad Application**
 Made by Erica Nwoga
