@@ -11,6 +11,8 @@
     --color-grey: rgb(143, 147, 163);
     --color-white: rgb(255, 255, 255);
     --color-black: rgb(0,0,0);
+
+    --color-florence: rgb(228, 151, 78);
 }
 
 
@@ -44,7 +46,7 @@ h3 {
 }
 
 span {
-    color:rgb(228, 151, 78);
+    color:var(--color-florence);
 }
 
 .welcome-container{
@@ -59,7 +61,9 @@ span {
     padding: 1% 0% 1% 0%;
     text-shadow: 0 0 1px 10px white;
 }
-
+.trivia{
+    padding: 1% 0% 1% 0%;
+}
 .studentTable{
     border: 5px solid black;
     border-radius: 10px;
@@ -69,7 +73,7 @@ span {
 }
 
 th {
-    background-color: rgb(228, 151, 78);
+    background-color: var(--color-florence);
     text-align: center;
     padding: 1%;
 }

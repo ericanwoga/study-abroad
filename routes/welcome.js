@@ -8,7 +8,6 @@ const databaseAndCollection = {db: "studyAbroad_DB", collection:"students"};
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const { request } = require("http");
 
-
 //show welcome page
 router.get("/Barcelona", (req, res) => { 
     let studentList; //students in the same city
