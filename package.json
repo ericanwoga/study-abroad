@@ -7,7 +7,6 @@
     "mongodb": "^4.12.1",
     "node": "^19.2.0",
     "serve-favicon": "^2.5.0",
-    "main": "index.js"
   },
   "scripts": {
     "devStart": "nodemon index.js"
