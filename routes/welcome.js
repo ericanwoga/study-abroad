@@ -16,7 +16,14 @@ router.get("/Barcelona", (req, res) => {
     async function main() {
         const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    
+
+        let description;
+        getCityWiki("Barcelona").then( value =>
+            {
+                description = value;
+            }
+        );
+
         try {
             await client.connect();
             let city = "Barcelona";
@@ -34,7 +41,7 @@ router.get("/Barcelona", (req, res) => {
                 style: `<link href="/styles/ba-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "¡Bienvenidos",
                 location: "Barcelona, Spain",
-                trivia: "Api",
+                trivia: description,
                 table: tableString
             } 
 
@@ -66,7 +73,14 @@ router.get("/Barcelona", (req, res) => {
     async function main() {
         const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    
+        
+        let description;
+        getCityWiki("Cape_Town").then( value =>
+            {
+                description = value;
+            }
+        );
+
         try {
             await client.connect();
             let city = "Cape Town";
@@ -84,7 +98,7 @@ router.get("/Barcelona", (req, res) => {
                 style: `<link href="/styles/ct-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Welkom",
                 location: "Cape Town, South Africa",
-                trivia: "Api",
+                trivia: description,
                 table: tableString
             } 
 
@@ -116,7 +130,14 @@ router.get("/Barcelona", (req, res) => {
     async function main() {
         const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    
+        let description;
+        
+        getCityWiki("Florence").then( value =>
+            {
+                description = value;
+            }
+        );
+
         try {
             await client.connect();
             let city = "Florence";
@@ -134,7 +155,7 @@ router.get("/Barcelona", (req, res) => {
                 style: `<link href="/styles/fl-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Benvenuto",
                 location: "Florence, Italy",
-                trivia: "Api",
+                trivia: description,
                 table: tableString
             } 
 
@@ -163,10 +184,19 @@ router.get("/Barcelona", (req, res) => {
     let studentList; //students in the same city
     let tableString = "";
 
+    
+
     async function main() {
         const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    
+
+        let description;
+        getCityWiki("London").then( value =>
+            {
+                description = value;
+            }
+        );
+
         try {
             await client.connect();
             let city = "London";
@@ -184,7 +214,7 @@ router.get("/Barcelona", (req, res) => {
                 style: `<link href="/styles/ld-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Welcome",
                 location: "London, United Kingdom",
-                trivia: "Api",
+                trivia: description,
                 table: tableString
             } 
 
@@ -216,7 +246,14 @@ router.get("/Barcelona", (req, res) => {
     async function main() {
         const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    
+
+        let description;
+        getCityWiki("Nice").then( value =>
+            {
+                description = value;
+            }
+        )
+
         try {
             await client.connect();
             let city = "Nice";
@@ -234,7 +271,7 @@ router.get("/Barcelona", (req, res) => {
                 style: `<link href="/styles/ni-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Bienvenue",
                 location: "Nice, France",
-                trivia: "Api",
+                trivia: description,
                 table: tableString
             } 
 
@@ -266,7 +303,14 @@ router.get("/Barcelona", (req, res) => {
     async function main() {
         const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    
+
+        let description;
+        getCityWiki("Tokyo").then( value =>
+            {
+                description = value;
+            }
+        );
+
         try {
             await client.connect();
             let city = "Tokyo";
@@ -284,7 +328,7 @@ router.get("/Barcelona", (req, res) => {
                 style: `<link href="/styles/tk-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "ようこそ",
                 location: "Tokyo, Japan",
-                trivia: "Api",
+                trivia: description,
                 table: tableString
             } 
 
@@ -312,6 +356,28 @@ router.get("/Barcelona", (req, res) => {
 })
 
 
+async function getCityWiki(city){
+    let apiURL = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${city}`;
 
+    let apiResponse = await fetch(apiURL);
+    let data = await apiResponse.json();
+    let page = data['query']['pages'];
+    //get the page ID
+    let pageID = Object.keys(page);
+    pageID = (JSON.stringify(pageID));
+    pageID = pageID.replace(/[^0-9\.]+/g , "");
+
+    //get the first paragraph
+    let prgh1 = page[pageID].extract;
+    let maxLength = 1000; // maximum number of characters to extract
+
+    //trim the string to the maximum length
+    let shortParagraph = prgh1.substr(0, maxLength);
+
+    //re-trim if we are in the middle of a word
+    shortParagraph = shortParagraph.substr(0, Math.min(shortParagraph.length, shortParagraph.lastIndexOf(". ")))
+
+    return shortParagraph;
+}
 
 module.exports = router;

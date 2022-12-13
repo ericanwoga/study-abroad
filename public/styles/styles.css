@@ -6,10 +6,11 @@
     --color-med-blue: rgb(78,210,244);
     --color-ocean: rgb(91, 106, 150);
     --color-ocean2: rgb(84, 108, 178);
-    --color-navy: rgb(78, 90, 125);
+    --color-navy: rgb(64, 71, 90);
     --color-lavender:  rgb(198, 205, 255);
     --color-med-green: rgb(119, 241, 78);
-    --color-grey: rgb(143, 147, 163);
+    --color-grey: rgb(82, 91, 118);
+    --color-grey2: rgb(143, 147, 163);
     --color-white: rgb(255, 255, 255);
     --color-black: rgb(0,0,0);
 }
@@ -21,6 +22,8 @@ html{
 
 body{
     font-family: 'Chivo', sans-serif;
+    background-image: url("../../images/home-img.jpg");
+    background-size: cover;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -31,6 +34,7 @@ body{
 .container{
     height: 100%;
     width: 100%;
+    background-color: rgba(240, 246, 255, 0.75);
 }
 
 .title{
@@ -52,6 +56,10 @@ h2 {
     width: 75%;
     margin: 1%;
     color: var(--color-grey);
+    /*1px 1px 2px rgb(29, 103, 213),*/
+  /*  text-shadow:  0 0 5px rgb(232, 253, 255), 0 0 3px rgb(239, 250, 255);
+*/text-shadow:  0 0 10px rgb(232, 253, 255);
+
 }
 
 .home-buttons{
@@ -64,10 +72,11 @@ h2 {
     padding: 1%;
     margin-right: 5%;
     border-radius: 5px;
-    border: 0px;
+    border: 0.65vw solid var(--color-black);
     background-image: linear-gradient(to right, var(--color-ocean), var(--color-med-blue));
-    /*box-shadow: 0 0 10px 5px rgba(84, 223, 238, 0.5);*/
+    box-shadow: 0 0 10px 5px rgba(225, 252, 255, 0.5);
     color: var(--color-white);
+    text-shadow: 0 0 0.3em rgb(110, 99, 152);
     cursor: pointer;
     font-weight: 400;
     font-size: 2.5vw;
@@ -103,6 +112,7 @@ h2 {
 .application-container{
     height: 100%;
     width: 100%;
+    background-color: rgba(240, 246, 255, 0.75);
 }
 
 .application-title{
@@ -135,6 +145,8 @@ h2 {
     font-weight: 400;
     padding: 1%;
     font-size: 2vw;
+    border:3px solid var(--color-black);
+
 }
 
 #submit{
@@ -147,8 +159,15 @@ h2 {
     font-weight: 400;
     padding: 1%;
     font-size: 2vw;
+    border: 3px solid var(--color-black);
+
 }
 
+input, select {
+    border: 2px solid var(--color-black);
+    border-radius: 5px;
+
+}
 
 #submit:hover {
     transition: all .1s ease-in-out;

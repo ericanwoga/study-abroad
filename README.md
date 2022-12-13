@@ -5,12 +5,14 @@ Made by Erica Nwoga
 
 
 ## **Description**
-Students apply for a study abroad program by entering their information. The database stores this data, and displays other students in the program.
+Students apply for a study abroad program by entering their information and the city they'd like to study in. 
+The database stores their information, and displays 
+a description about the city using data from the MediaWiki API.
 
 ## **Tech Stack**
 JavaScript, NodeJS, ExpressJS, MongoDB, HTML, CSS
 
 ## **API**
-[World Geo Data API](https://rapidapi.com/natkapral/api/world-geo-data)
+The [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page#Quick_Start) API acesses Wikipedia data.
 
 ## **Demo Video**

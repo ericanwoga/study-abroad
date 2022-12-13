@@ -9,7 +9,7 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
-    "devStart": "nodemon studyAbroad.js"
+    "devStart": "nodemon index.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
