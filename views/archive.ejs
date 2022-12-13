@@ -4,12 +4,16 @@
         <meta charset="utf-8" />
         <title>Study Abroad</title>
         <link href="/styles/styles.css" rel="stylesheet" type="text/css">
+        <script>
+            function deleteAll(){
+                //are you sure you want to delete all?
+                let text = "WARNING! Are you sure you want to remove all students?";
+                if(window.confirm(text) == true){
+                    document.getElementById("form").submit();
+                }
+            }
+        </script>
     </head>
-    <script>
-        function erase(){
-            //are you sure you want to delete all?
-        }
-    </script>
     <body>
         <div class="container">
             <div class="nav">
@@ -32,12 +36,14 @@
                         <tr>
                             <th>Name</th><th>Destination</th><th>Semester</th>
                         </tr>
-                        <%- table %>
+                        <%- locals.table %>
                     </table>
                 </div>
                 
                 <div class="erase-button">
-                    <button id="erase" onclick="erase()">Delete All</button>
+                    <form action="./archive" id="form" onsubmit="deleteAll()" method="post">
+                        <button type="submit" id="erase" >Delete All</button>
+                    </form>
                 </div>
             </div>
         </div>

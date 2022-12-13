@@ -57,6 +57,31 @@ router.get("/", (req, res) => {
     main().catch(console.error);
 });
 
+//process deletion
+router.post("/", (req, res) => {
+    
+
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.nhlhr7e.mongodb.net/?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+        try {
+            await client.connect();
+            await client.db(databaseAndCollection.db)
+            .collection(databaseAndCollection.collection)
+            .deleteMany({});
+            
+            res.render("archive");
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+    
+    main().catch(console.error);
+});
+
 
 
 
