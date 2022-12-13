@@ -83,7 +83,7 @@ router.get("/Barcelona", (req, res) => {
 
         try {
             await client.connect();
-            let city = "Cape Town";
+            let city = "CapeTown";
             studentList = await findStudentsForCity(client, databaseAndCollection, city);
             //make a table of students in same city
             studentList.forEach(student =>{ tableString +=
