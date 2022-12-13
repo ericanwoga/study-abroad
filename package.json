@@ -6,7 +6,7 @@
     "http": "^0.0.1-security",
     "mongodb": "^4.12.1",
     "node": "^19.2.0",
-    "serve-favicon": "^2.5.0",
+    "serve-favicon": "^2.5.0"
   },
   "scripts": {
     "devStart": "nodemon index.js"
