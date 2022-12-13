@@ -4,24 +4,25 @@
     <head>
         <meta charset="utf-8" />
         <title>Study Abroad</title>
-        <%- style %>
+       <%- style %>
     </head>
-    <script>
-        
-    </script>
     <body>
         <div class="welcome-container">
+            <div  class="nav">
+                <h4><a href="/">HOME</a></h4>
+                <h4><a href="/archive">ARCHIVE</a></h4>
+            </div>
             <div class="welcome-title">
                 <h1><%- greeting %>!</h1>
                 <h2><b>Learn more about <span><%- location %>.</span></b></h2>
             </div>
             <div>
                 <h3>Information</h3>
-                <div class="triva">
-                    <%- trivia %>.
+                <div >
+                    <p class="triva"><%- trivia %>.</p>
                 </div>
             </div>
-            <div>
+            <div class="studentTable-container">
                 <h3>Students who are also going to <%- location %></h3>
                 <table class="studentTable">
                     <tr>

@@ -8,6 +8,8 @@ const applicationRouter = require("./routes/apply"); //import apply router
 app.use('/apply', applicationRouter); //mounts apply router to '/apply'
 const welcomeRouter = require("./routes/welcome"); //import welcome router
 app.use('/welcome', welcomeRouter); //mounts welcome router to '/welcome'
+const archiveRouter = require("./routes/archive"); //import archive router
+app.use('/archive', archiveRouter); //mounts archive router to '/welcome'
 
 
 const portNumber = 3000;
@@ -21,14 +23,6 @@ app.set("views", path.resolve(__dirname, "views")); //local directory where temp
 app.set("view engine", "ejs"); //allows us to use ejs
 const bodyParser = require("body-parser"); // handles post paramer
 app.use(bodyParser.urlencoded({extended:false})); //allows middleware body parsing
-
-const userName = process.env.MONGO_DB_USERNAME;
-const password = process.env.MONGO_DB_PASSWORD;
-
-// Our database and collection 
-const databaseAndCollection = {db: "studyAbroad_DB", collection:"students"};
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
 
 console.log(`Web server is running at http://localhost:${portNumber}`);
 process.stdout.write(prompt);

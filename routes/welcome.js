@@ -152,7 +152,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
-                style: `<link href="/styles/fl-styles.css" rel="stylesheet" type="text/css">`,
+                style: `<link href="../styles/fl-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Benvenuto",
                 location: "Florence, Italy",
                 trivia: description,
@@ -211,7 +211,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
-                style: `<link href="/styles/ld-styles.css" rel="stylesheet" type="text/css">`,
+                style: `<link href="../styles/ld-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Welcome",
                 location: "London, United Kingdom",
                 trivia: description,
@@ -268,7 +268,7 @@ router.get("/Barcelona", (req, res) => {
             });
 
             let info={
-                style: `<link href="/styles/ni-styles.css" rel="stylesheet" type="text/css">`,
+                style: `<link href="../styles/ni-styles.css" rel="stylesheet" type="text/css">`,
                 greeting: "Bienvenue",
                 location: "Nice, France",
                 trivia: description,

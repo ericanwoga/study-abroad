@@ -30,6 +30,23 @@ body{
 }
 
 /*---------- HOME PAGE -----------*/
+.nav{
+    font-weight: 800;
+    font-size: 2vw; 
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.nav :link , :visited{
+    color: black;
+    margin-right: 3vw;
+}
+
+.nav :hover{
+    color: var(--color-ocean);
+}
 
 .container{
     height: 100%;
@@ -62,6 +79,20 @@ h2 {
 
 }
 
+.city-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.city-links a {
+    margin-right: 2vw;
+}
+
+.city-links :hover {
+    color: var(--color-ocean);
+}
+
 .home-buttons{
     margin-top: 4%;
 }
@@ -82,21 +113,8 @@ h2 {
     font-size: 2.5vw;
 }
 
-#current {
-    font-family: 'Chivo', sans-serif;
-    width: 25vw;
-    padding: 1%;
-    margin-right: 5%;
-    border-radius: 5px;
-    border: 0px;
-    background-image: linear-gradient(to right, var(--color-ocean), var(--color-med-blue));
-    color: var(--color-white);
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 2.5vw;
-}
 
-#sign-up:hover , #current:hover {
+#sign-up:hover , {
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -107,6 +125,33 @@ h2 {
    /* background-image: linear-gradient(to right,
     rgb(107, 135, 169), rgb(97, 199, 225),rgb(95, 181, 202));*/
 }
+
+/*---- ARCHIVE -----*/
+.archiveTable-container{
+    margin-bottom: 5%;
+    
+    }
+    .archiveTable{
+        border: 5px solid black;
+        border-radius: 10px;
+        background-color: white;
+        width: 60%;
+        font-size: 1.5vw; 
+    }
+    
+    th {
+        background-color: var(--color-lavender);
+        text-align: center;
+        padding: 1%;
+    }
+    
+    table tr{
+        border-bottom: 5px solid black;
+    }
+    
+    td {
+        padding: 1%;
+    }
 
 /*----- STUDY ABROAD APPLICATION -------*/
 .application-container{
@@ -149,7 +194,7 @@ h2 {
 
 }
 
-#submit{
+#submit, #erase{
     font-family: 'Chivo', sans-serif;
     border-radius: 5px;
     border: 0px;
@@ -169,7 +214,7 @@ input, select {
 
 }
 
-#submit:hover {
+#submit:hover , #erase:hover {
     transition: all .1s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;

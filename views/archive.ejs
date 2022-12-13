@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Study Abroad</title>
+        <link href="/styles/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <script>
+        function erase(){
+            //are you sure you want to delete all?
+        }
+    </script>
+    <body>
+        <div class="container">
+            <div class="nav">
+                <h4><a href="/">HOME</a></h4>
+                <h4><a href="/archive">ARCHIVE</a></h4>
+            </div>
+            <div class="title">
+                <h1>Archive</h1>
+                <div class="city-links">
+                    <h4><a href="/welcome/Barcelona">BARCELONA</a></h4>
+                    <h4><a href="/welcome/CapeTown">CAPE TOWN</a></h4>
+                    <h4><a href="/welcome/Florence">FLORENCE</a></h4>
+                    <h4><a href="/welcome/London">LONDON</a></h4>
+                    <h4><a href="/welcome/Nice">NICE</a></h4>
+                    <h4><a href="/welcome/Tokyo">TOKYO</a></h4>
+                </div>
+                <h2><b>Here is a list of all the students in the program.</b></h2>
+                <div class="archiveTable-container">
+                    <table class="archiveTable">
+                        <tr>
+                            <th>Name</th><th>Destination</th><th>Semester</th>
+                        </tr>
+                        <%- table %>
+                    </table>
+                </div>
+                
+                <div class="erase-button">
+                    <button id="erase" onclick="erase()">Delete All</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200;400;500;700;900&display=swap');
+
+:root{
+    --color-light-blue: rgb(170, 243, 254);
+    --color-blue: rgb(151, 224, 243);
+    --color-med-blue: rgb(78,210,244);
+    --color-ocean: rgb(91, 106, 150);
+    --color-ocean2: rgb(84, 108, 178);
+    --color-navy: rgb(78, 90, 125);
+    --color-med-green: rgb(119, 241, 78);
+    --color-grey: rgb(143, 147, 163);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0,0,0);
+
+    --color-london: rgb(223, 160, 102);
+}
+
+.nav{
+    font-weight: 800;
+    font-size: 2vw; 
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.nav :link , :visited{
+    color: black;
+    margin-right: 3vw;
+}
+
+.nav :hover{
+    color: var(--color-london);
+}
+
+body{
+    font-family: 'Chivo', sans-serif;
+    margin: 0;
+    background-image: url("../../images/london-img.jpg");
+    background-size: cover;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 10vw;
+    margin: 1%;
+    color: var(--color-black);
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 3vw; 
+    width: 75%;
+    margin: 1%;
+    color: var(--color-grey);
+
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 2vw; 
+    margin: 1%;
+    color: black;
+}
+
+span {
+    color:var(--color-london);
+}
+
+.welcome-container{
+    background-color: rgba(245, 240, 255, 0.9);
+    padding: 2%;
+    border-radius: 20px;
+    margin: 2%;
+    
+}
+
+.welcome-title{
+    padding: 1% 0% 1% 0%;
+    text-shadow: 0 0 1px 10px white;
+}
+.trivia{
+    padding: 10%;
+}
+.studentTable-container{
+margin-top: 5%;
+margin-bottom: 5%;
+
+}
+.studentTable{
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 60%;
+    font-size: 1.5vw; 
+}
+
+th {
+    background-color: var(--color-london);
+    text-align: center;
+    padding: 1%;
+}
+
+table tr{
+    border-bottom: 5px solid black;
+}
+
+td {
+    padding: 1%;
+}

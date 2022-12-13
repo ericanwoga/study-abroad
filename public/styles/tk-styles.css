@@ -12,10 +12,26 @@
     --color-white: rgb(255, 255, 255);
     --color-black: rgb(0,0,0);
 
-    --color-tokyo: rgb(228, 78, 130);
-    
+    --color-florence: rgb(228, 151, 78);
+    --color-tokyo: rgb(244, 113, 150);
+}
+.nav{
+    font-weight: 800;
+    font-size: 2vw; 
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
+.nav :link , :visited{
+    color: black;
+    margin-right: 3vw;
+}
+
+.nav :hover{
+    color: var(--color-tokyo);
+}
 
 body{
     font-family: 'Chivo', sans-serif;
@@ -37,6 +53,7 @@ h2 {
     width: 75%;
     margin: 1%;
     color: var(--color-grey);
+
 }
 
 h3 {
@@ -51,7 +68,7 @@ span {
 }
 
 .welcome-container{
-    background-color: rgba(240, 246, 255, 0.9);
+    background-color: rgba(255, 240, 251, 0.9);
     padding: 2%;
     border-radius: 20px;
     margin: 2%;
@@ -63,7 +80,12 @@ span {
     text-shadow: 0 0 1px 10px white;
 }
 .trivia{
-    padding: 1% 0% 1% 0%;
+    padding: 10%;
+}
+.studentTable-container{
+margin-top: 5%;
+margin-bottom: 5%;
+
 }
 .studentTable{
     border: 5px solid black;

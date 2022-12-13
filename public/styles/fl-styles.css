@@ -14,7 +14,23 @@
 
     --color-florence: rgb(228, 151, 78);
 }
+.nav{
+    font-weight: 800;
+    font-size: 2vw; 
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
+.nav :link , :visited{
+    color: black;
+    margin-right: 3vw;
+}
+
+.nav :hover{
+    color: var(--color-florence);
+}
 
 body{
     font-family: 'Chivo', sans-serif;
@@ -63,7 +79,12 @@ span {
     text-shadow: 0 0 1px 10px white;
 }
 .trivia{
-    padding: 1% 0% 1% 0%;
+    padding: 10%;
+}
+.studentTable-container{
+margin-top: 5%;
+margin-bottom: 5%;
+
 }
 .studentTable{
     border: 5px solid black;
