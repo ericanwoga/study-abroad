@@ -12,7 +12,7 @@ const archiveRouter = require("./routes/archive"); //import archive router
 app.use('/archive', archiveRouter); //mounts archive router to '/welcome'
 
 
-const portNumber = 3000;
+const portNumber = process.env.PORT || 3000;
 const prompt = "Stop to shutdown the server: ";
 app.use(favicon(path.join(__dirname, 'public/favicon', 'favicon.ico')));
 
