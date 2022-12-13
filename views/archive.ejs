@@ -5,11 +5,21 @@
         <title>Study Abroad</title>
         <link href="/styles/styles.css" rel="stylesheet" type="text/css">
         <script>
-            function deleteAll(){
+            window.onload = function(){
+                let deleter = document.getElementById("erase").addEventListener('click', deleteAll);
+            }
+    
+            function deleteAll(e){
+
+                 //prevent form from submitting
+                e.preventDefault();
+
                 //are you sure you want to delete all?
-                let text = "WARNING! Are you sure you want to remove all students?";
+                let text = "Are you sure you want to remove all students?";
                 if(window.confirm(text) == true){
                     document.getElementById("form").submit();
+                }else{
+                    return false;
                 }
             }
         </script>
@@ -41,7 +51,7 @@
                 </div>
                 
                 <div class="erase-button">
-                    <form action="./archive" id="form" onsubmit="deleteAll()" method="post">
+                    <form action="./archive" id="form" method="post">
                         <button type="submit" id="erase" >Delete All</button>
                     </form>
                 </div>

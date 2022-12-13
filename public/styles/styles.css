@@ -101,7 +101,7 @@ h2 {
     margin-top: 4%;
 }
 
-#sign-up {
+#sign-up , #erase{
     font-family: 'Chivo', sans-serif;
     width: 15vw;
     padding: 1%;
@@ -118,7 +118,7 @@ h2 {
 }
 
 
-#sign-up:hover  {
+#sign-up:hover, #erase:hover  {
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -198,7 +198,7 @@ h2 {
 
 }
 
-#submit, #erase{
+#submit-btn {
     font-family: 'Chivo', sans-serif;
     border-radius: 5px;
     border: 0px;
@@ -218,7 +218,7 @@ input, select {
 
 }
 
-#submit:hover , #erase:hover {
+#submit-btn:hover {
     transition: all .1s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;

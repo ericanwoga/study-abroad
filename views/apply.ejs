@@ -6,17 +6,30 @@
         <link href="/styles/styles.css" rel="stylesheet" type="text/css">
     </head>
     <script>
-        function verify(){
-            //make sure its a valid studentID
+        window.onload = function(){
+            let apply = document.getElementById("submit-btn").addEventListener('click', verify);
+        }
+    
+        function verify(e){
+            //prevent form from submitting
+           e.preventDefault();
+
+            //get studentID
             let reg = /^[A-Z]{3}[0-9]{3}$/;
-            let input = document.getElementById("studentID").value;
-            if(reg.test(input)){
-                document.querySelector(".form").submit();
+            let id = document.getElementById("studentID").value;
+            
+            //make sure its a valid studentID
+            console.log("id is " + reg.test(id));
+            if(reg.test(id)){
+                document.getElementById("apply-form").submit();
             }else{
                 let text = "Please enter a valid ID.";
                 window.alert(text);
+                return false;
             }
+            
         }
+
     </script>
     <body>
         <div class="application-container">
@@ -31,7 +44,7 @@
                 </div>
                 
                 <p id="error"><b><%- locals.error %></b></p>
-                <form class="form" action="./apply" method="POST">
+                <form class="form" id="apply-form" action="./apply" method="POST">
                     <fieldset>
                         <legend><b>Name</b></legend>
                         <label for="firstName">First Name:</label>
@@ -75,7 +88,7 @@
                     </fieldset>
                     <div class="reset-and-submit">
                         <input id="reset" type="reset" />
-                        <button id="submit" value="Submit Application" onclick="verify()">Submit</button>
+                        <button id="submit-btn" value="Submit Application">Submit</button>
                     </div>
                 </form>
             </div> 
