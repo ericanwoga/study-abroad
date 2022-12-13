@@ -36,3 +36,21 @@ app.get("/", (req, res) => {
 });
 
 
+//event listener
+process.stdin.on('readable', () => {  
+	let dataInput = process.stdin.read();
+	if (dataInput !== null) {
+		let command = dataInput.trim(); 
+		if (command === "stop") {
+            //shut down the server
+			console.log("Shutting down the server");
+            process.exit(0);
+        } else {
+			//inavlid input
+			console.log(`Invalid command: ${command}`);
+		}
+        //ask the user again
+        process.stdout.write(prompt);
+        process.stdin.resume();
+    }
+});
