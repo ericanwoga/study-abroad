@@ -13,10 +13,10 @@ a description about the city using data from the MediaWiki API.
 JavaScript, NodeJS, ExpressJS, MongoDB, HTML, CSS
 
 ## **API**
-The [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page#Quick_Start) API acesses Wikipedia data.
+The [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page#Quick_Start) API acesses Wikipedia data. For this project, I used it to gather the first paragraph of each country's Wikipedia page.
 
 # **Live Site**
 See the project live [here](https://study-abroad.onrender.com/)!
 
 ## **Demo Video**
-Watch on [Youtube]() 
+Watch on Youtube [here](https://youtu.be/3p7rKllAudc)! 
