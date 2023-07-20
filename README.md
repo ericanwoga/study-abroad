@@ -1,7 +1,7 @@
 ![banner](./public/images/flag-banner.png)
 
 # **Study Abroad Application**
-Made by Erica Nwoga UID - 116234856
+Made by Erica Nwoga
 
 
 ## **Description**
